@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { AnimatePresence } from "framer-motion";
-import { Layout } from "../components/layout/";
+import { Layout } from "../components/shared/layout/";
 
 function MyApp({ Component, pageProps, router }) {
   return (
