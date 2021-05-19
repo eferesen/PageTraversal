@@ -1,22 +1,21 @@
 import PageMotion from "../shared/motion";
-import { StepNavigation} from '../shared/navigate'
+import StepNavigation from "../shared/navigate";
+import { useSteps } from "../../hooks/useSteps";
+import { useStepDirection } from "../../hooks/useStepDirection";
 
-const Income = (props) => {
-  const { nextPage, prevPage } = props;
+const Income = () => {
+  const { previous } = useSteps();
+  const direction = useStepDirection();
+  console.log("direction Income", direction);
   return (
-    <PageMotion>
+    <PageMotion direction={direction}>
       <div>
         <h3>Income Component</h3>
-        {prevPage && (
+        {/* {previous && (
           <div>
-             <StepNavigation pageName={prevPage} />
+            <StepNavigation pageName={previous} direction={-1} />
           </div>
-        )}
-        {nextPage && (
-          <div>
-            <StepNavigation pageName={nextPage} />
-          </div>
-        )}
+        )} */}
       </div>
     </PageMotion>
   );

@@ -1,22 +1,19 @@
 import PageMotion from "../shared/motion";
-import { StepNavigation } from "../shared/navigate";
+import StepNavigation from "../shared/navigate";
+import { useSteps } from "../../hooks/useSteps";
+import { useStepDirection } from "../../hooks/useStepDirection";
 
-const Cfos = (props) => {
-  const { nextPage, prevPage } = props;
+const Cfos = () => {
+  const { next } = useSteps();
+  const direction = useStepDirection();
+  console.log("direction CFOS", direction);
   return (
-    <PageMotion>
+    <PageMotion direction={direction}>
       <div>
         <h3>Cfos Component</h3>
-        {prevPage && (
-          <div>
-            <StepNavigation pageName={prevPage} />
-          </div>
-        )}
-        {nextPage && (
-          <div>
-            <StepNavigation pageName={nextPage} />
-          </div>
-        )}
+        <div>
+          <StepNavigation pageName={next} direction={direction} />
+        </div>
       </div>
     </PageMotion>
   );

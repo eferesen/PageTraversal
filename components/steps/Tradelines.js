@@ -1,21 +1,24 @@
 import PageMotion from "../shared/motion";
-import { StepNavigation} from '../shared/navigate'
+import StepNavigation from "../shared/navigate";
+import { useSteps } from "../../hooks/useSteps";
+import { useStepDirection } from "../../hooks/useStepDirection";
 
-const Tradelines = (props) => {
-  const { nextPage, prevPage } = props;
-
+const Tradelines = () => {
+  const { next, previous } = useSteps();
+  const direction = useStepDirection();
+  console.log("direction Tradeline", direction);
   return (
-    <PageMotion>
+    <PageMotion direction={direction}>
       <div>
         <h3>Tradelines Component</h3>
-        {prevPage && (
+        {/* {previous && (
           <div>
-            <StepNavigation pageName={prevPage} />
+            <StepNavigation pageName={previous} direction={-1} />
           </div>
-        )}
-        {nextPage && (
+        )} */}
+        {next && (
           <div>
-             <StepNavigation pageName={nextPage} />
+            <StepNavigation pageName={next} direction={1} />
           </div>
         )}
       </div>
@@ -23,4 +26,4 @@ const Tradelines = (props) => {
   );
 };
 
-export default  Tradelines;
+export default Tradelines;
