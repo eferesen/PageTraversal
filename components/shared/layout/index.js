@@ -1,15 +1,22 @@
 import { Header } from "./header";
 import { Footer } from "./footer";
+import Container from "@material-ui/core/Container";
+import styles from './layout.module.css'
+
+
 
 const Layout = ({ children }) => {
+
   return (
     <>
-      <h1>Layout</h1>
-      <div>
-        <Header />
-        {children}
-        <Footer />
-      </div>
+      <Container>
+        <h1 className={styles.center}>Layout</h1>
+        <div>
+          <Header />
+          {children}
+          <Footer />
+        </div>
+      </Container>
     </>
   );
 };

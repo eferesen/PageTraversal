@@ -1,20 +1,25 @@
 import PageMotion from "../shared/motion";
-import { StepNavigation} from '../shared/navigate'
+import { StepNavigation } from "../shared/navigate";
+import { useSteps } from "../../hooks/useSteps";
+import { useStepDirection } from "../../hooks/useStepDirection";
 
-const DebtSnapShot = (props) => {
-  const { nextPage, prevPage } = props;
+const DebtSnapShot = () => {
+  const { next, previous } = useSteps();
+  const direction = useStepDirection() || 1;
+  console.log("direction DebtSnapShot", direction);
+
   return (
-    <PageMotion>
+    <PageMotion direction={direction}>
       <div>
         <h3>DebtSnapShot</h3>
-        {prevPage && (
+        {previous && (
           <div>
-             <StepNavigation pageName={prevPage} />
+            <StepNavigation pageName={previous} direction={-1} />
           </div>
         )}
-        {nextPage && (
+        {next && (
           <div>
-             <StepNavigation pageName={nextPage} />
+            <StepNavigation pageName={next} direction={1} />
           </div>
         )}
       </div>
