@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import Button from "@material-ui/core/Button";
 import Context from "../../../context/Context";
 
@@ -21,4 +21,4 @@ const StepNavigation = ({ pageName, direction }) => {
   );
 };
 
-export { StepNavigation };
+export default StepNavigation;

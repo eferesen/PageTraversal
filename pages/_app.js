@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps, router }) {
 
   useEffect(() => {
     // Add any initial setup values here
-    const start = async () => {
+    const start =  () => {
       dispatch({ type: "setState", payload: { direction: 1 } });
     };
     start();

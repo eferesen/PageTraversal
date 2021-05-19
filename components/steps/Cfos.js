@@ -1,5 +1,5 @@
 import PageMotion from "../shared/motion";
-import { StepNavigation } from "../shared/navigate";
+import StepNavigation from "../shared/navigate";
 import { useSteps } from "../../hooks/useSteps";
 import { useStepDirection } from "../../hooks/useStepDirection";
 
